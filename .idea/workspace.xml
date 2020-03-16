@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a662bc0-0b6a-4921-9d11-10b2b87fad0e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/ProductController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/includes/footer.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/includes/navbar.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pages/about.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pages/home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sf4_starter_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sf4_starter_project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/product/add.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/product/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/product/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/includes/navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/navbar.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584346965165</updated>
-      <workItem from="1584346966602" duration="11279000" />
+      <workItem from="1584346966602" duration="14163000" />
     </task>
     <servers />
   </component>
@@ -72,14 +70,18 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="946" y="169" width="468" height="568" key="#com.intellij.ide.util.MemberChooser" timestamp="1584369214826">
+      <screen x="0" y="0" width="1600" height="900" />
+    </state>
+    <state x="946" y="169" width="468" height="568" key="#com.intellij.ide.util.MemberChooser/0.0.1600.900@0.0.1600.900" timestamp="1584369214826" />
     <state x="193" y="0" width="664" height="900" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584367091261">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
     <state x="193" y="0" width="664" height="900" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.900@0.0.1600.900" timestamp="1584367091261" />
-    <state x="432" y="261" width="726" height="390" key="NewPhpClassDialog" timestamp="1584367513948">
+    <state x="432" y="261" width="726" height="390" key="NewPhpClassDialog" timestamp="1584368947007">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
-    <state x="432" y="261" width="726" height="390" key="NewPhpClassDialog/0.0.1600.900@0.0.1600.900" timestamp="1584367513948" />
+    <state x="432" y="261" width="726" height="390" key="NewPhpClassDialog/0.0.1600.900@0.0.1600.900" timestamp="1584368947007" />
     <state x="653" y="85" width="947" height="736" key="SettingsEditor" timestamp="1584351952304">
       <screen x="0" y="0" width="1600" height="900" />
     </state>
