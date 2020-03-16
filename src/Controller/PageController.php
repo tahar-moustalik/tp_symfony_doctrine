@@ -9,13 +9,13 @@ use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
 
-class HomeController
+class PageController
 {
 
     private $twig;
 
     /**
-     * HomeController constructor.
+     * PageController constructor.
      * @param Environment $twig
      */
     public function __construct(Environment $twig)
@@ -28,9 +28,21 @@ class HomeController
      * @throws LoaderError
      * @throws RuntimeError
      * @throws SyntaxError
-     * @Route("/",name="home_index")
+     * @Route("/",name="page_home")
      */
-    public function index() {
-       return new Response($this->twig->render('product/index.html.twig'));
+    public function home() {
+       return new Response($this->twig->render('pages/home.html.twig'));
+    }
+
+
+    /**
+     * @return Response
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     * @Route("/about",name="page_about")
+     */
+    public function about() {
+        return new Response($this->twig->render('pages/about.html.twig'));
     }
 }
