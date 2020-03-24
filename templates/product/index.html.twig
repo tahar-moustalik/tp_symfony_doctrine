@@ -1,40 +1,86 @@
 {% extends 'base.html.twig' %}
 
-
+{% block stylesheets %}
+    {{ encore_entry_link_tags('product') }}
+{% endblock %}
 {% block body %}
 
     <div class="container mt-5">
-        <div class="card">
-            <div class="card-header">
-                Products List
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <div class="card-body">
+        {% endfor %}
+        {% for message in app.flashes('error') %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+
+        <h1>All Products</h1>
+        <div class="row">
+            <div class="col-6">
+                <a href="{{ path('product_add_form') }}" class="btn btn-info mb-5 float-right">Add Product</a>
+            </div>
+            <div class="col-6">
+                <a href="{{ path('product_latest_3') }}" class="btn btn-warning mb-5 float-right">3 Latest Added Products</a>
+            </div>
+        </div>
+
+        <div class="table-responsive">
                 <table class="table">
                     <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Image</th>
                         <th scope="col">Name</th>
                         <th scope="col">Price</th>
                         <th scope="col">Quantity</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Order Details</th>
                         <th scope="col">Created At</th>
+                        <th scope="col">Actions</th>
                     </tr>
                     </thead>
                     <tbody>
                     {% for product in products %}
-
                     <tr>
                         <th scope="row">{{ product.id }}</th>
+                        <th>
+                            <img class="img-fluid" src="{{ product.imageUrl }}" alt="">
+                        </th>
                         <td>{{product.name}}</td>
-                        <td>{{product.price}}</td>
+                        <td>{{product.price}} DH</td>
                         <td>{{ product.quantity }}</td>
+                        <td>{{ product.description }}</td>
+                        <td>
+                            <a href="{{ path('product_order_details',{'id': product.id}) }}" class="btn btn-info btn-sm"><i class="material-icons">remove_red_eye</i>
+                            </a>
+                        </td>
                         <td>{{ product.createdAt | date }}</td>
+                        <td>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <a href="{{ path('product_show',{'id': product.id}) }}" class="btn btn-info btn-sm"><i class="material-icons">remove_red_eye</i></a>
+                                    <a href="{{ path('product_edit',{'id': product.id}) }}" class="btn btn-success btn-sm"><i class="material-icons">edit</i></a>
+                                    <a href="{{ path('product_delete',{'id': product.id}) }}" class="btn btn-danger btn-sm"><i class="material-icons">delete</i></a>
+                            </div>
+                        </td>
                     </tr>
                     {% endfor %}
                     </tbody>
                 </table>
-            </div>
         </div>
-    </div>
+        </div>
 
+    {% block javascripts %}
+        {{ encore_entry_script_tags('product') }}
+
+    {% endblock %}
 
 {% endblock %}

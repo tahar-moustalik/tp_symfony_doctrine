@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                Order Details
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Id</label>
+                        <input type="text" class="form-control"
+                               value="{{ order.id }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Created At</label>
+                        <input type="text" class="form-control"
+                               value="{{ order.createdAt | date }}">
+                    </div>
+                </form>
+
+                <h3>Ordered Products (OrderDetails)</h3>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Created At</th>
+                            <th scope="col">Quantity</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for orderDetail in order.orderDetails %}
+                            <tr>
+                                <th scope="row">{{ orderDetail.id }}</th>
+                                <td>{{orderDetail.createdAt |date}}</td>
+                                <th>{{ orderDetail.quantity }}</th>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

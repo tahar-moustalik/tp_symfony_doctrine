@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                Product Details
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <img src="{{ product.imageUrl }}"
+                        class="img-fluid"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name"
+                               value="{{ product.name }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" class="form-control" id="price" name="price"
+                               value="{{ product.price }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" class="form-control" id="quantity"
+                               name="quantity"
+                               value="{{ product.quantity }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea name="description" id="description" cols="40" rows="10"
+
+                        >{{ product.description }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUrl">Image Url</label>
+                        <input type="text" class="form-control" id="imageUrl"
+                               name="imageUrl"
+                               value="{{ product.imageUrl }}">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

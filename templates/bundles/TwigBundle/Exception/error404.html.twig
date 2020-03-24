@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page Non Trouvé</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,900" rel="stylesheet">
+    {{ encore_entry_link_tags('errors') }}
+</head>
+
+<body>
+
+<div id="notfound">
+    <div class="notfound-bg"></div>
+    <div class="notfound">
+        <div class="notfound-404">
+            <h1>404</h1>
+        </div>
+        <h2>Désolé, La Page Demandé n'existe pas. </h2>
+        <a href="{{ path('page_home') }}" class="home-btn">Page d'accueil</a>
+    </div>
+</div>
+
+{{ encore_entry_script_tags('errors') }}
+</body>
+</html>

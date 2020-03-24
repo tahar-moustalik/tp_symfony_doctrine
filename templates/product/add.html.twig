@@ -3,10 +3,40 @@
 
 {% block body %}
 
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container mx-auto my-auto">
-            <h1 class="display-1">Add Product Page</h1>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                Add Product
+            </div>
+            <div class="card-body">
+                <form action="{{ path('product_add') }}" method="post">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" class="form-control" id="price" name="price">
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" class="form-control" id="quantity"
+                        name="quantity">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea name="description" id="description" cols="60" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUrl">Image Url</label>
+                        <input type="text" class="form-control" id="imageUrl"
+                        name="imageUrl">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+            </div>
         </div>
+
     </div>
 
 

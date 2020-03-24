@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('product') }}
+{% endblock %}
+{% block body %}
+
+    <div class="container mt-5">
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+        {% for message in app.flashes('error') %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+
+        <h1>All Orders</h1>
+        <a href="{{ path('order_add_form') }}" class="btn btn-info mb-5 float-right">Add Order</a>
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Created At</th>
+                    <th scope="col">Produit Commande</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <th scope="row">{{ order.id }}</th>
+                        <td>{{order.createdAt |date}}</td>
+                        <th>{{ order.orderDetails.count }}</th>
+                        <td>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <a href="{{ path('order_show',{'id': order.id}) }}" class="btn btn-info btn-sm"><i class="material-icons">remove_red_eye</i></a>
+                                <a href="#" class="btn btn-success btn-sm"><i class="material-icons">edit</i></a>
+                                <a href="#" class="btn btn-danger btn-sm"><i class="material-icons">delete</i></a>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+{% endblock %}
